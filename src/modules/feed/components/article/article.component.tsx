@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { FavoriteButton } from '../favorite-button/favorite-button.component';
+import { TagList } from '../tag-list/tag-list.component';
 
 interface ArticleProps {}
 
@@ -21,7 +23,7 @@ export const Article: FC<ArticleProps> = () => {
             </Link>
             <span className="text-conduit-gray text-date">9 october, 2022</span>
           </div>
-        
+          <FavoriteButton />
         </div>
         <Link to="/article/qwert" className="hover:no-underline">
           <h1 className="mb-1 font-semibold text-2xl text-conduit-darkestGray">
@@ -35,7 +37,7 @@ export const Article: FC<ArticleProps> = () => {
             <span className="text-conduit-gray text-date font-light">
               Read more...
             </span>
-        
+            <TagList />
           </div>
         </Link>
       </div>

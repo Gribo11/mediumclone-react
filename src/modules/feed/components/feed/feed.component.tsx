@@ -7,6 +7,7 @@ import ReactPaginate from "react-paginate";
 import { FEED_PAGE_SIZE } from "../../consts";
 import { useSearchParams } from "react-router-dom";
 import { serializeSearchParams } from "../../../../utils/router";
+import { TagCloud } from "../tag-cloud/tag-cloud.components";
 
 interface FeedProps {}
 
@@ -20,7 +21,10 @@ export const Feed: FC<FeedProps> = () => {
     setSearchParams(serializeSearchParams({ page: String(selected) }));
   };
 
-  const { data, error, isLoading, isFetching } = useGetGlobalFeedQuery({ page });
+  const { data, error, isLoading, isFetching } = useGetGlobalFeedQuery({
+    page,
+    tag: searchParams.get("tag"),
+  });
 
   if (isLoading || isFetching) {
     return <Container>Feed loading...</Container>;
@@ -52,7 +56,9 @@ export const Feed: FC<FeedProps> = () => {
             />
           </nav>
         </div>
-        <div className="w-1/4">tags</div>
+        <div className="w-1/4 pl-3">
+          <TagCloud />
+        </div>
       </div>
     </Container>
   );

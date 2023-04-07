@@ -1,9 +1,9 @@
-import { DateTime } from "luxon";
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { FeedArticle } from "../../api/dto/global-feed.in";
-import { FavoriteButton } from "../favorite-button/favorite-button.component";
-import { TagList } from "../tag-list/tag-list.component";
+import { DateTime } from 'luxon';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { FeedArticle } from '../../api/dto/global-feed.in';
+import { FavoriteButton } from '../favorite-button/favorite-button.component';
+import { TagList } from '../tag-list/tag-list.component';
 
 interface ArticleProps extends FeedArticle {}
 
@@ -28,7 +28,10 @@ export const Article: FC<ArticleProps> = ({
               />
             </Link>
             <div className="mr-6 ml-0.3 leading-4 inline-flex flex-col">
-              <Link to={`/@${author.username}`} className="font-medium">
+              <Link
+                to={`/${encodeURIComponent(author.username)}`}
+                className="font-medium"
+              >
                 {author.username}
               </Link>
               <span className="text-conduit-gray-500 text-date">

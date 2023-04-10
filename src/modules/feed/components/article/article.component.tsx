@@ -1,9 +1,9 @@
-import { DateTime } from 'luxon';
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { FeedArticle } from '../../api/dto/global-feed.in';
-import { FavoriteButton } from '../favorite-button/favorite-button.component';
-import { TagList } from '../tag-list/tag-list.component';
+import { DateTime } from "luxon";
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import { FeedArticle } from "../../api/dto/global-feed.in";
+import { FavoriteButton } from "../favorite-button/favorite-button.component";
+import { TagList } from "../tag-list/tag-list.component";
 
 interface ArticleProps extends FeedArticle {}
 
@@ -14,6 +14,7 @@ export const Article: FC<ArticleProps> = ({
   title,
   description,
   tagList,
+  slug,
 }) => {
   return (
     <article>
@@ -41,7 +42,10 @@ export const Article: FC<ArticleProps> = ({
           </div>
           <FavoriteButton count={favoritesCount} />
         </div>
-        <Link to="/article/qwert" className="hover:no-underline">
+        <Link
+          to={`/article/${encodeURIComponent(slug)}`}
+          className="hover:no-underline"
+        >
           <h1 className="mb-1 font-semibold text-2xl text-conduit-gray-1000">
             {title}
           </h1>

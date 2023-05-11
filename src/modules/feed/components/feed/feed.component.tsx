@@ -2,7 +2,7 @@ import { FC } from 'react';
 import ReactPaginate from 'react-paginate';
 import { FeedData } from '../../api/repository';
 import { FEED_PAGE_SIZE } from '../../consts';
-import { usePageParam } from '../../hooks/user-page-param.hook';
+import { usePageParam } from '../../hooks/use-page-param.hook';
 import { ArticleList } from '../article-list/article-list.component';
 
 interface FeedProps {

@@ -4,7 +4,7 @@ import { Container } from '../../../common/components/container/container.compon
 import { useGetProfileFeedQuery } from '../../feed/api/repository';
 import { FeedToggle } from '../../feed/components/feed-toggle/feed-toggle.component';
 import { Feed } from '../../feed/components/feed/feed.component';
-import { usePageParam } from '../../feed/hooks/user-page-param.hook';
+import { usePageParam } from '../../feed/hooks/use-page-param.hook';
 import { useGetProfileQuery } from '../api/repository';
 import { ProfileBanner } from '../components/profile-banner/profile-banner.component';
 
